@@ -1,7 +1,7 @@
 <!-- <p align="center">
     <img src="assets/a-logo-representing - omnicreator - -a-powerful-ai-t.png" width="150" style="margin-bottom: 0.2;"/>
 <p> -->
-<h2 align="center"> FinePhys: Fine-grained Human Action Generation by Explicitly Incorporating Physical Laws for Effective Skeletal Guidance</h2>
+<h2 align="center"> FineTec: Fine-Grained Action Recognition under Temporal Corruption via Skeleton Decomposition and Sequence Completion</h2>
 <!-- ![](./assets/logo_long.png#gh-light-mode-only){: width="50%"} -->
 <!-- ![](./assets/logo_long_dark.png#gh-dark-mode-only=100x20) -->
 <div align="center">
@@ -10,7 +10,7 @@
 
 
 
-_**[Dian Shao](https://scholar.google.com/citations?user=amxDSLoAAAAJ&hl=en)<sup>†</sup>, [Mingfei Shi](https://github.com/SmartDianLab/FinePhys), [Shengda Xu](https://github.com/SmartDianLab/FinePhys), [Haodong Chen](https://haroldchen19.github.io/), [Yongle Huang](https://kylehuang9.github.io/), [Binglu Wang](https://github.com/SmartDianLab/FinePhys)**_
+_**[Dian Shao](https://scholar.google.com/citations?user=amxDSLoAAAAJ&hl=en)<sup>†</sup>, [Mingfei Shi](https://github.com/SmartDianLab/FinePhys), [Like Liu](https://github.com/Lozumi)**_
 <br><br>
 <sup>†</sup>Corresponding Author
 <br>
@@ -21,11 +21,11 @@ Northwestern Polytechnical University
  <a href='https://arxiv.org/abs/2505.13437'><img src='https://img.shields.io/badge/arXiv-2505.13437-b31b1b.svg'></a> &nbsp;
  <a href='https://smartdianlab.github.io/projects-FinePhys/'><img src='https://img.shields.io/badge/Project-Page-Green'></a> &nbsp;
 <br>
-<strong>IEEE/CVF Computer Vision and Pattern Recognition (CVPR) 2025</strong>
+<strong>The 40th Annual AAAI Conference on Artificial Intelligence (AAAI-26)</strong>
 </div>
 
 ## Abstract
-Although remarkable progress has been achieved in video generation, synthesizing physically plausible human actions remains an unresolved challenge, especially when addressing fine-grained semantics and complex temporal dynamics. For instance, generating gymnastics routines such as “two turns on one leg with the free leg optionally below horizontal” poses substantial difficulties for current video generation methods, which often fail to produce satisfactory results. To address this, we propose FinePhys, a Fine-grained human action generation framework incorporating Physics for effective skeletal guidance. Specifically, FinePhys first performs online 2D pose estimation and then accomplishes dimension lifting through in-context learning. Recognizing that such data-driven 3D pose estimations may lack stability and interpretability, we incorporate a physics-based module that re-estimates motion dynamics using Euler-Lagrange equations, calculating joint accelerations bidirectionally across the temporal dimension. The physically predicted 3D poses are then fused with data-driven poses to provide multi-scale 2D heatmap-based guidance for the video generation process. Evaluated on three fine-grained action subsets from FineGym (FX-JUMP, FX-TURN, and FX-SALTO), FinePhys significantly outperforms competitive baselines. Comprehensive qualitative results further demonstrate FinePhys's ability to generate more natural and plausible fine-grained human actions.
+Recognizing fine-grained actions from temporally corrupted skeleton sequences remains a significant challenge, particularly in real-world scenarios where online pose estimation often yields substantial missing data. Existing methods often struggle to accurately recover temporal dynamics and fine-grained spatial structures, resulting in the loss of subtle motion cues crucial for distinguishing similar actions. To address this, we propose FineTec, a unified framework for Fine-grained action recognition under Temporal Corruption. FineTec first restores a base skeleton sequence from corrupted input using context-aware completion with diverse temporal masking. Next, a skeleton-based spatial decomposition module partitions the skeleton into five semantic regions, further divides them into dynamic and static subgroups based on motion variance, and generates two augmented skeleton sequences via targeted perturbation. These, along with the base sequence, are then processed by a physics-driven estimation module, which utilizes Lagrangian dynamics to estimate joint accelerations. Finally, both the fused skeleton position sequence and the fused acceleration sequence are jointly fed into a GCN-based action recognition head. Extensive experiments on both coarse-grained (NTU-60, NTU-120) and fine-grained (Gym99, Gym288) benchmarks show that FineTec significantly outperforms previous methods under various levels of temporal corruption. Specifically, FineTec achieves top-1 accuracies of 89.1% and 78.1% on the challenging Gym99-severe and Gym288-severe settings, respectively, demonstrating its robustness and generalizability.
 
 <table class="center">
     <tr>
@@ -34,13 +34,14 @@ Although remarkable progress has been achieved in video generation, synthesizing
 </table>
  
 ## 🔥 Update
-- __[2025.05.20]__: Released our FinePhys [Paper](https://arxiv.org/abs/2505.13437).
-- __[2025.05.07]__: Initialized this github repository and README.
+- __[2025.11.XX]__: Released our FineTec [Paper](https://arxiv.org/abs/2505.13437).
+- __[2025.11.08]__: Initialized this github repository and README.
 
 
 ## 🧰 TODO
 
-- [x] Release Paper.
+- [ ] Release paper.
+- [ ] Release dataset.
 - [ ] Release training code
 - [ ] Release inference code.
 - [ ] Release model weights.
