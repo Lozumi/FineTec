@@ -27,14 +27,13 @@ Northwestern Polytechnical University
 ## Abstract
 Recognizing fine-grained actions from temporally corrupted skeleton sequences remains a significant challenge, particularly in real-world scenarios where online pose estimation often yields substantial missing data. Existing methods often struggle to accurately recover temporal dynamics and fine-grained spatial structures, resulting in the loss of subtle motion cues crucial for distinguishing similar actions. To address this, we propose FineTec, a unified framework for Fine-grained action recognition under Temporal Corruption. FineTec first restores a base skeleton sequence from corrupted input using context-aware completion with diverse temporal masking. Next, a skeleton-based spatial decomposition module partitions the skeleton into five semantic regions, further divides them into dynamic and static subgroups based on motion variance, and generates two augmented skeleton sequences via targeted perturbation. These, along with the base sequence, are then processed by a physics-driven estimation module, which utilizes Lagrangian dynamics to estimate joint accelerations. Finally, both the fused skeleton position sequence and the fused acceleration sequence are jointly fed into a GCN-based action recognition head. Extensive experiments on both coarse-grained (NTU-60, NTU-120) and fine-grained (Gym99, Gym288) benchmarks show that FineTec significantly outperforms previous methods under various levels of temporal corruption. Specifically, FineTec achieves top-1 accuracies of 89.1% and 78.1% on the challenging Gym99-severe and Gym288-severe settings, respectively, demonstrating its robustness and generalizability.
 
-<table class="center">
+<!-- <table class="center">
     <tr>
     <td><img src="assets/cvpr25_poster-sd-v3_00(1).png"></td>
     </tr>
-</table>
+</table> -->
  
 ## 🔥 Update
-- __[2025.11.XX]__: Released our FineTec [Paper](https://arxiv.org/abs/2505.13437).
 - __[2025.11.08]__: Initialized this github repository and README.
 
 
@@ -46,15 +45,13 @@ Recognizing fine-grained actions from temporally corrupted skeleton sequences re
 - [ ] Release inference code.
 - [ ] Release model weights.
 
-<!-- ## 🧰 Models
+## 📊 Dataset
 
-|Model|Resolution|GPU Mem. & Inference Time (A100, ddim 50steps)|Checkpoint|
-|:---------|:---------|:--------|:--------|
-|DynamiCrafter1024|576x1024|18.3GB & 75s (`perframe_ae=True`)|[Hugging Face](https://huggingface.co/Doubiiu/DynamiCrafter_1024/blob/main/model.ckpt)|
+Coming Soon~
 
-Currently, our DynamiCrafter can support generating videos of up to 16 frames with a resolution of 576x1024. The inference time can be reduced by using fewer DDIM steps.
+## 🧰 Models
 
-GPU memory consumed on RTX 4090 reported by @noguchis in [Twitter](https://x.com/noguchis/status/1754488826016432341?s=20): 18.3GB (576x1024), 12.8GB (320x512), 11.9GB (256x256). -->
+Coming Soon~
 
 
 ## 📖 Contents
@@ -65,11 +62,11 @@ Coming Soon~
 ## 📝 Citation
 Please consider citing our paper if our work is useful:
 ```bib
-@article{shao2025finephys,
+@article{shao2026finetec,
     title={FinePhys: Fine-grained Human Action Generation by Explicitly Incorporating Physical Laws for Effective Skeletal Guidance},
-    author={Shao, Dian and Shi, Mingfei and Xu, Shengda and Chen, Haodong and Huang, Yongle and Wang, Binglu},
-    journal={arXiv preprint arXiv:2505.13437},
-    year={2025}
+    author={Shao, Dian and Shi, Mingfei and Liu, Like},
+    journal={TBD},
+    year={2026}
 }
 ```
 
